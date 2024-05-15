@@ -20,15 +20,15 @@ const scontoMinorenni = 20
 const scontoOver = 40
 
 
-//Form Submit aggiungo l'evento click
+//Form Submit aggiungo l'evento submit
 
 
 document.getElementById('formBiglietto').addEventListener('submit' , function(event){
 
 event.preventDefault();
 
-const etaUtenteValue = Number (etaUtente.value);
-const kmUtenteValue = Number (kmUtente.value);
+const etaUtenteValue = Number(etaUtente.value);
+const kmUtenteValue = Number(kmUtente.value);
 let prezzo = Number(prezzokm * kmUtenteValue)
 
 
@@ -52,7 +52,6 @@ if (etaUtenteValue < minorenni){
 
  document.getElementById('priceholderdesc').classList.remove('d-none')
 
-
  document.getElementById('ageholder').innerHTML = kmUtenteValue
 
  document.getElementById ('kmholder').innerHTML = etaUtenteValue
@@ -71,7 +70,6 @@ document.getElementById('reset').addEventListener('click' , function(){
     document.getElementById('kmholderdesc').classList.add('d-none')
    
     document.getElementById('priceholderdesc').classList.add('d-none')
-
 
     document.getElementById('ageholder').classList.add('d-none')
 
