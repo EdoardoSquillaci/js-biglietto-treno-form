@@ -13,9 +13,9 @@ const kmUtente = document.getElementById ('km');
 
 //calcoli
 
-const prezzo = 0.21
-constMinorenni = 18
-constOver = 65
+const prezzokm = 0.21
+const minorenni = 18
+const over = 65
 const scontoMinorenni = 20
 const scontoOver = 40
 
@@ -28,16 +28,63 @@ document.getElementById('formBiglietto').addEventListener('submit' , function(ev
 event.preventDefault();
 
 const etaUtenteValue = Number (etaUtente.value);
-const kmUtenteValue = Number (kmUtente.value)
+const kmUtenteValue = Number (kmUtente.value);
+let prezzo = Number(prezzokm * kmUtenteValue)
 
 
 //logica di calcolo
 
-
+if (etaUtenteValue < minorenni){
+    prezzo = prezzo - [(prezzo * scontoMinorenni) / 100]}
  
+ else if ( etaUtenteValue >= over){
+
+    prezzo =  prezzo - [(prezzo * scontoOver) / 100];
+ }  
+ 
+ prezzo = prezzo.toFixed(2)
 
 
+ document.getElementById('ageholderdesc').classList.remove('d-none')
 
+ document.getElementById('kmholderdesc').classList.remove('d-none')
+
+
+ document.getElementById('priceholderdesc').classList.remove('d-none')
+
+
+ document.getElementById('ageholder').innerHTML = kmUtenteValue
+
+ document.getElementById ('kmholder').innerHTML = etaUtenteValue
+ 
+ document.getElementById ('priceholder').innerHTML = prezzo
 
 
 })
+
+
+
+document.getElementById('reset').addEventListener('click' , function(){
+
+    document.getElementById('ageholderdesc').classList.add('d-none')
+
+    document.getElementById('kmholderdesc').classList.add('d-none')
+   
+    document.getElementById('priceholderdesc').classList.add('d-none')
+
+
+    document.getElementById('ageholder').classList.add('d-none')
+
+    document.getElementById('kmholder').classList.add('d-none')
+   
+    document.getElementById('priceholder').classList.add('d-none')
+
+})
+
+
+
+
+
+
+
+
