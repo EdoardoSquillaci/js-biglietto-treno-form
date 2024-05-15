@@ -62,7 +62,7 @@ if (etaUtenteValue < minorenni){
 
 })
 
-
+//pulsante reset
 
 document.getElementById('reset').addEventListener('click' , function(){
 
